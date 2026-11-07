@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luz de lo Profundo — Combate Final</title>
+<meta name="description" content="Luz de lo Profundo: un RPG de combate por turnos y esquiva en tiempo real contra el Niño de la Oscuridad.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="720" aria-label="Escena de combate de Luz de lo Profundo"></canvas>
+
+  <section id="title-screen" class="screen" aria-label="Pantalla de inicio">
+    <div class="frame" aria-hidden="true"></div>
+    <div class="title-inner">
+      <p class="eyebrow">UN COMBATE AL FINAL DEL MUNDO</p>
+      <h1 class="game-title">
+        <span class="title-light">LUZ</span>
+        <span class="title-deep">DE LO PROFUNDO</span>
+      </h1>
+      <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="subtitle">Combate final contra el <em>Niño de la Oscuridad</em></p>
+
+      <button id="play-button" class="play-button" aria-label="Play">
+        <span class="play-glyph" aria-hidden="true">▶</span>
+        <span>JUGAR</span>
+      </button>
+
+      <p class="controls">
+        <span><b>WASD</b> / <b>Flechas</b> mover y elegir</span>
+        <span><b>Z</b> / <b>Enter</b> confirmar</span>
+        <span><b>X</b> volver</span>
+        <span><b>ESC</b> pausa</span>
+      </p>
+      <p class="endings-line">Finales descubiertos <span id="endings-count">0</span> / 4</p>
+    </div>
+    <div class="corner tl" aria-hidden="true"></div>
+    <div class="corner tr" aria-hidden="true"></div>
+    <div class="corner bl" aria-hidden="true"></div>
+    <div class="corner br" aria-hidden="true"></div>
+  </section>
+
+  <section id="ending-screen" class="screen hidden" aria-label="Final del juego">
+    <div class="ending-inner">
+      <p class="eyebrow" id="ending-kind">FINAL</p>
+      <h2 id="ending-title">—</h2>
+      <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p id="ending-text" class="ending-text">—</p>
+      <p id="ending-quote" class="ending-quote">—</p>
+      <div class="ending-actions">
+        <button id="again-button" class="play-button small" aria-label="Reiniciar" type="button">
+          <span class="play-glyph" aria-hidden="true">↻</span><span>VOLVER A JUGAR</span>
+        </button>
+        <button id="title-button" class="ghost-button" aria-label="Volver al título" type="button">TÍTULO</button>
+      </div>
+      <p class="endings-line" id="ending-counter">Finales descubiertos 0 / 4</p>
+    </div>
+  </section>
+
+  <div id="rotate-hint" aria-hidden="true">Gira el dispositivo para una mejor experiencia</div>
+</div>
+<script type="module" src="src/game.js"></script>
+</body>
+</html>
